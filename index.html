@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Car parts store</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+
 	<link href="css/style.css" rel="stylesheet" />
+
 </head>
 
 <body> 
@@ -28,14 +30,17 @@
 						<nav class="col-md-6 col-12 tm-nav">
 							<ul class="tm-nav-ul">
 								<li class="tm-nav-li"><a href="index.html" class="tm-nav-link active">Home</a></li>
+								<li class="tm-nav-li"><a href="reg.html" class="tm-nav-link">Registration</a></li>
 								<li class="tm-nav-li"><a href="about.html" class="tm-nav-link">About</a></li>
 								<li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Contact</a></li>
+								<li class="tm-nav-li"><a href="admin.html" class="tm-nav-link">Admin</a></li>
 							</ul>
 						</nav>	
 					</div>
 				</div>
 			</div>
 		</div>
+
 
 		<main>
 			<header class="row tm-welcome-section">
@@ -46,9 +51,10 @@
 			<div class="tm-paging-links">
 				<nav>
 					<ul>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link active">Parts</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Accessories</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Styling</a></li>
+						<button class="custom-btn btn-1"><a href="index.html" class="">Parts</a></button>
+						<button class="custom-btn btn-1"><a href="index2.html" class="">Accessories</a></button>
+						<button class="custom-btn btn-1"><a href="index3.html" class="">Styling</a></button>
+						
 					</ul>
 				</nav>
 			</div>
@@ -97,6 +103,46 @@
 							</figcaption>
 						</figure>
 					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/gallery/depositphotos-99288696-xl-2015.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Carburetor</h4>
+								<p class="tm-gallery-description">Carburetor for bmw 4-5-6 series car</p>
+								<p class="tm-gallery-price">$80.25</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/gallery/image.jfif" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Automatic transmission</h4>
+								<p class="tm-gallery-description">Automatic transmission completely new</p>
+								<p class="tm-gallery-price">$20 / $40 / $60</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/gallery/загружено.jfif" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Timing belt (camshaft)</h4>
+								<p class="tm-gallery-description">A timing belt, timing chain, or cambelt is a part of an internal combustion engine that synchronizes the rotation of the crankshaft and the camshaft(s) so that the engine's valves open and close at the proper times during each cylinder's intake and exhaust strokes.n</p>
+								<p class="tm-gallery-price">$94</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/gallery/загружено (1).jfif" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Car tire</h4>
+								<p class="tm-gallery-description">A car tire is one of the most important elements of the wheel, which is an elastic rubber-metal-fabric shell mounted on the rim of the disc.</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
 					
 
 				</div> 
@@ -125,6 +171,21 @@
             </p>
 		</footer>
 	</div>
-	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
 </body>
 </html>
